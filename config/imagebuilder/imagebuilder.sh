@@ -369,11 +369,6 @@ cp ${GITHUB_WORKSPACE}/amlogic-s9xxx/common-files/patches/zsh/.zshrc .
 cp ${GITHUB_WORKSPACE}/amlogic-s9xxx/common-files/patches/zsh/example.zsh ./.oh-my-zsh/custom/example.zsh
 popd
 
-# Set modemmanager to disable
-mkdir -p feeds/luci/protocols/luci-proto-modemmanager/root/etc/uci-defaults
-cat << EOF > feeds/luci/protocols/luci-proto-modemmanager/root/etc/uci-defaults/70-modemmanager
-[ -f /etc/init.d/modemmanager ] && /etc/init.d/modemmanager disable
-exit 0
     sync && sleep 3
     echo -e "${INFO} [ openwrt/bin/targets/*/* ] directory status: $(ls bin/targets/*/* -l 2>/dev/null)"
     echo -e "${SUCCESS} The rebuild is successful, the current path: [ ${PWD} ]"
